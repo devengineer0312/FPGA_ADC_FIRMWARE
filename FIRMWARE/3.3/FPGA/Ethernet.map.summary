@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jul 14 05:27:10 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : Ethernet
+Top-level Entity Name : MultipleADC
+Family : Cyclone IV E
+Total logic elements : 4,568
+    Total combinational functions : 2,796
+    Dedicated logic registers : 2,251
+Total registers : 2251
+Total pins : 115
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,44 @@
+
+State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_6|next_state
+Name next_state.issue_ld next_state.data_transfer next_state.idle 
+next_state.idle 0 0 0 
+next_state.data_transfer 0 1 1 
+next_state.issue_ld 1 0 1 
+
+State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_5|next_state
+Name next_state.issue_ld next_state.data_transfer next_state.idle 
+next_state.idle 0 0 0 
+next_state.data_transfer 0 1 1 
+next_state.issue_ld 1 0 1 
+
+State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_4|next_state
+Name next_state.issue_ld next_state.data_transfer next_state.idle 
+next_state.idle 0 0 0 
+next_state.data_transfer 0 1 1 
+next_state.issue_ld 1 0 1 
+
+State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_3|next_state
+Name next_state.issue_ld next_state.data_transfer next_state.idle 
+next_state.idle 0 0 0 
+next_state.data_transfer 0 1 1 
+next_state.issue_ld 1 0 1 
+
+State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_2|next_state
+Name next_state.issue_ld next_state.data_transfer next_state.idle 
+next_state.idle 0 0 0 
+next_state.data_transfer 0 1 1 
+next_state.issue_ld 1 0 1 
+
+State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_1|next_state
+Name next_state.issue_ld next_state.data_transfer next_state.idle 
+next_state.idle 0 0 0 
+next_state.data_transfer 0 1 1 
+next_state.issue_ld 1 0 1 
+
+State Machine - |adc_dac_interface|ads8330_interface:I_ads8330_interface|next_state
+Name next_state.wait_state next_state.data_transfer next_state.issue_cs next_state.issue_convst next_state.idle 
+next_state.idle 0 0 0 0 0 
+next_state.issue_convst 0 0 0 1 1 
+next_state.issue_cs 0 0 1 0 1 
+next_state.data_transfer 0 1 0 0 1 
+next_state.wait_state 1 0 0 0 1 

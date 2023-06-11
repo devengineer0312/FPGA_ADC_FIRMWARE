@@ -1,0 +1,7 @@
+module signal_gen(
+	input fpga_gclk,
+	input [7:0] amplitude,
+	input [7:0] phase,
+	output reg [15:0] adc_channel
+);
+endmodule

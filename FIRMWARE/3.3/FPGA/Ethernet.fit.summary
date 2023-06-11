@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jul 14 05:27:36 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : Ethernet
+Top-level Entity Name : MultipleADC
+Family : Cyclone IV E
+Device : EP4CE30F23C7
+Timing Models : Final
+Total logic elements : 3,501 / 28,848 ( 12 % )
+    Total combinational functions : 2,796 / 28,848 ( 10 % )
+    Dedicated logic registers : 2,251 / 28,848 ( 8 % )
+Total registers : 2251
+Total pins : 115 / 329 ( 35 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

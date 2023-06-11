@@ -1,0 +1,1 @@
+Fix the pin assignment for DI and DO

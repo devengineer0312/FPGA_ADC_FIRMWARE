@@ -1,0 +1,27 @@
+﻿Build started 5/9/2019 11:17:26 AM.
+     1>Project "E:\48CH_ADC_FPGA\Work\3.0\48Ch App\FCAD.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Release\FCAD.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Release\FCAD.pch" /Fo".\Release\\" /Fd".\Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FCADDlg.cpp
+         FCADDlg.cpp
+     1>FCADDlg.cpp(640): warning C4101: 'data' : unreferenced local variable
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\FCAD.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /ManifestFile:".\Release\FCAD.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"E:\48CH_ADC_FPGA\Work\3.0\48Ch App\Release\FCAD.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Release\FCAD.lib" /MACHINE:X86 .\Release\FCAD.res
+         .\Release\FCAD.obj
+         .\Release\FCADDlg.obj
+         .\Release\StdAfx.obj
+         FCAD.vcxproj -> E:\48CH_ADC_FPGA\Work\3.0\48Ch App\.\Release\FCAD.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\Release\FCAD.exe;#1" /manifest .\Release\FCAD.exe.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         Deleting file ".\Release\FCAD.unsuccessfulbuild".
+         Touching ".\Release\FCAD.lastbuildstate".
+     1>Done Building Project "E:\48CH_ADC_FPGA\Work\3.0\48Ch App\FCAD.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.08

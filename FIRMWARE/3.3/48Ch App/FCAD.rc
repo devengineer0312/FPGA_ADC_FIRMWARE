@@ -1,0 +1,366 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FCAD.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\FCAD.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 FCAD"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "FCAD 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2006",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_FCAD_DIALOG DIALOGEX 0, 0, 777, 291
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "FCFR-USB2070"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "采集参数",IDC_STATIC,189,3,84,121
+    EDITTEXT        IDC_EDTFREQ,224,61,32,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "启动",IDC_BTNSTART,283,12,37,16
+    PUSHBUTTON      "结束",IDC_BTNSTOP,283,29,37,16
+    PUSHBUTTON      "单次采集",IDC_BTNSINGLE,283,103,37,16
+    EDITTEXT        IDC_EDTDIS,667,3,108,101,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+    LTEXT           "采样率",IDC_STATIC,192,64,27,8
+    CONTROL         "",IDC_STATIC1,"Static",SS_BLACKFRAME,0,126,777,165
+    COMBOBOX        IDC_CMBMODE,224,16,36,62,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDTTRIGLEN,224,91,27,12,ES_AUTOHSCROLL
+    LTEXT           "触发长度",IDC_STATIC,192,92,32,10
+    LTEXT           "Op",IDC_STATIC,251,90,8,10
+    LTEXT           "触发模式",IDC_STATIC,192,20,32,8
+    PUSHBUTTON      "DA0",IDC_BTNDA0,343,98,40,19
+    GROUPBOX        "DA0",IDC_STATIC,329,3,67,121
+    EDITTEXT        IDC_EDTDA0FREQ,355,30,35,14,ES_AUTOHSCROLL
+    LTEXT           "频率",IDC_STATIC,337,36,17,8
+    LTEXT           "点数",IDC_STATIC,335,51,17,9
+    EDITTEXT        IDC_EDTDA0CNT,355,48,35,14,ES_AUTOHSCROLL
+    CONTROL         "启动DA0",IDC_CHKDA0,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,337,84,44,12
+    PUSHBUTTON      "DA1",IDC_BTNDA1,411,98,40,19
+    GROUPBOX        "DA1",IDC_STATIC,397,3,67,121
+    EDITTEXT        IDC_EDTDA1FREQ,425,30,35,14,ES_AUTOHSCROLL
+    LTEXT           "频率",IDC_STATIC,403,34,17,8
+    LTEXT           "点数",IDC_STATIC,401,53,17,8
+    EDITTEXT        IDC_EDTDA1CNT,425,48,35,14,ES_AUTOHSCROLL
+    CONTROL         "启动DA1",IDC_CHKDA1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,405,83,44,12
+    GROUPBOX        "DI&&DO&&FREQ",IDC_STATIC,603,3,61,86
+    LTEXT           "0x",IDC_STATIC,628,24,8,11
+    EDITTEXT        IDC_EDTSDI,638,22,22,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "DI",IDC_BTNGETDI,606,22,18,17
+    LTEXT           "0x",IDC_STATIC,628,59,9,11
+    EDITTEXT        IDC_EDTSDO,638,56,22,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "DO",IDC_BTNSETDO,608,54,18,17
+    COMBOBOX        IDC_CMBDA0WAV,337,14,52,49,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CMBDA1WAV,405,14,52,49,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "清除",IDC_BTNCLR,749,111,21,13
+    COMBOBOX        IDC_CMBSRC,224,31,36,62,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "触发源",IDC_STATIC,192,35,24,8
+    LTEXT           "延时",IDC_STATIC,192,108,17,9
+    EDITTEXT        IDC_EDTTRIGDELAY,224,106,31,12,ES_AUTOHSCROLL
+    LTEXT           "触发电平",IDC_STATIC,192,78,32,8
+    EDITTEXT        IDC_EDTTRIGLEVEL,224,76,30,12,ES_AUTOHSCROLL
+    LTEXT           "V",IDC_STATIC,258,75,8,8
+    CONTROL         "循环",IDC_CHKDA0LOOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,337,69,30,11
+    EDITTEXT        IDC_EDTDA0CYCNT,367,69,25,14,ES_AUTOHSCROLL
+    CONTROL         "循环",IDC_CHKDA1LOOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,403,66,30,11
+    EDITTEXT        IDC_EDTDA1CYCNT,433,66,25,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "写入",IDC_BTNSETOFFSET,611,101,19,16
+    CONTROL         "保存",IDC_CHKSAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,287,48,29,9
+    PUSHBUTTON      "读取",IDC_BTNGETOFFSET,639,102,19,16
+    PUSHBUTTON      "Max",IDC_BTNMAX,258,87,13,13
+    LTEXT           "Hz",IDC_STATIC,256,61,8,10
+    GROUPBOX        "通道",IDC_STATIC,1,3,186,121
+    CONTROL         "CH1",IDC_CH1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,11,25,12
+    CONTROL         "CH2",IDC_CH2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,22,25,12
+    CONTROL         "CH3",IDC_CH3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,33,25,12
+    CONTROL         "CH4",IDC_CH4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,46,25,12
+    CONTROL         "CH5",IDC_CH5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,58,25,12
+    CONTROL         "CH6",IDC_CH6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,71,25,12
+    CONTROL         "CH7",IDC_CH7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,84,25,12
+    CONTROL         "CH8",IDC_CH8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,96,25,12
+    CONTROL         "CH9",IDC_CH9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,11,25,12
+    CONTROL         "CH10",IDC_CH10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,22,28,12
+    CONTROL         "CH11",IDC_CH11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,33,27,12
+    CONTROL         "CH12",IDC_CH12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,46,27,12
+    CONTROL         "CH13",IDC_CH13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,58,29,12
+    CONTROL         "CH14",IDC_CH14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,71,28,12
+    CONTROL         "CH15",IDC_CH15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,84,28,12
+    CONTROL         "CH16",IDC_CH16,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,96,29,12
+    CONTROL         "CH17",IDC_CH17,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,11,29,12
+    CONTROL         "CH18",IDC_CH18,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,22,29,12
+    CONTROL         "CH19",IDC_CH19,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,33,29,12
+    CONTROL         "CH20",IDC_CH20,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,46,29,12
+    CONTROL         "CH21",IDC_CH21,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,58,29,12
+    CONTROL         "CH22",IDC_CH22,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,71,29,12
+    CONTROL         "CH23",IDC_CH23,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,84,29,12
+    CONTROL         "CH24",IDC_CH24,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,63,96,29,12
+    GROUPBOX        "连续采集",IDC_STATIC,275,3,52,72
+    GROUPBOX        "单次采集",IDC_STATIC,275,77,52,47
+    EDITTEXT        IDC_EDT1CHCNT,287,88,19,12,ES_AUTOHSCROLL
+    GROUPBOX        "零偏",IDC_STATIC,603,89,61,35
+    LTEXT           "MSa",IDC_STATIC,313,89,14,8
+    PUSHBUTTON      "选中ALL",IDC_BTNCHALL,58,108,30,14
+    PUSHBUTTON      "取消ALL",IDC_BTNUNCHALL,98,108,30,14
+    COMBOBOX        IDC_CMBDISCH,285,58,36,62,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "CH25",IDC_CH25,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,11,31,12
+    CONTROL         "CH26",IDC_CH26,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,22,31,12
+    CONTROL         "CH27",IDC_CH27,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,33,31,12
+    CONTROL         "CH28",IDC_CH28,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,46,31,12
+    CONTROL         "CH29",IDC_CH29,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,58,31,12
+    CONTROL         "CH30",IDC_CH30,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,71,31,12
+    CONTROL         "CH31",IDC_CH31,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,84,31,12
+    CONTROL         "CH32",IDC_CH32,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,96,31,12
+    CONTROL         "CH33",IDC_CH33,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,11,29,12
+    CONTROL         "CH34",IDC_CH34,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,22,28,12
+    CONTROL         "CH35",IDC_CH35,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,33,27,12
+    CONTROL         "CH36",IDC_CH36,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,46,27,12
+    CONTROL         "CH37",IDC_CH37,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,58,29,12
+    CONTROL         "CH38",IDC_CH38,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,71,28,12
+    CONTROL         "CH39",IDC_CH39,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,84,28,12
+    CONTROL         "CH40",IDC_CH40,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,96,29,12
+    CONTROL         "CH41",IDC_CH41,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,11,29,12
+    CONTROL         "CH42",IDC_CH42,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,22,29,12
+    CONTROL         "CH43",IDC_CH43,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,33,29,12
+    CONTROL         "CH44",IDC_CH44,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,46,29,12
+    CONTROL         "CH45",IDC_CH45,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,58,29,12
+    CONTROL         "CH46",IDC_CH46,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,71,29,12
+    CONTROL         "CH47",IDC_CH47,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,84,29,12
+    CONTROL         "CH48",IDC_CH48,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,96,29,12
+    GROUPBOX        "计数/脉冲发生器",IDC_STATIC,471,3,126,122
+    LTEXT           "方式",IDC_STATIC,483,23,19,10
+    COMBOBOX        IDC_CMBGPTC1TYPE,507,20,76,115,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "模式",IDC_STATIC,483,36,19,10
+    COMBOBOX        IDC_CMBGPTC1MODE,507,33,76,83,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "读计数",IDC_BTNCNT1,493,49,39,15
+    PUSHBUTTON      "脉冲",IDC_BTNPWM1,543,49,39,15
+    GROUPBOX        "CNT0",IDC_STATIC,474,12,120,55
+    LTEXT           "方式",IDC_STATIC,483,79,19,10
+    COMBOBOX        IDC_CMBGPTC2TYPE,507,74,76,79,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "模式",IDC_STATIC,483,95,19,10
+    COMBOBOX        IDC_CMBGPTC2MODE,507,89,76,81,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "读计数",IDC_BTNCNT2,493,105,39,15
+    PUSHBUTTON      "脉冲",IDC_BTNPWM2,543,104,39,15
+    GROUPBOX        "CNT1",IDC_STATIC,473,67,120,55
+    COMBOBOX        IDC_CMBADRG,224,46,36,62,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "AD范围",IDC_STATIC,192,49,30,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "星烁华创"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "FCAD"
+            VALUE "OriginalFilename", "FCAD.EXE"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_FCAD_DIALOG, DIALOG
+    BEGIN
+        TOPMARGIN, 3
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FCAD_DIALOG DLGINIT
+BEGIN
+    IDC_CMBMODE, 0x403, 9, 0
+0xacc1, 0xf8d0, 0xc9b2, 0xafbc, "\000" 
+    IDC_CMBMODE, 0x403, 7, 0
+0xf3ba, 0xa5b4, 0xa2b7, "\000" 
+    IDC_CMBMODE, 0x403, 9, 0
+0xd3d1, 0xb1ca, 0xa5b4, 0xa2b7, "\000" 
+    IDC_CMBDA0WAV, 0x403, 7, 0
+0xfdd5, 0xd2cf, 0xa8b2, "\000" 
+    IDC_CMBDA0WAV, 0x403, 5, 0
+0xbdb7, 0xa8b2, "\000" 
+    IDC_CMBDA1WAV, 0x403, 7, 0
+0xfdd5, 0xd2cf, 0xa8b2, "\000" 
+    IDC_CMBDA1WAV, 0x403, 5, 0
+0xbdb7, 0xa8b2, "\000" 
+    IDC_CMBSRC, 0x403, 11, 0
+0xe2cd, 0xfdd5, 0xd8d1, 0xa5b4, 0xa2b7, "\000" 
+    IDC_CMBSRC, 0x403, 11, 0
+0xe2cd, 0xbab8, 0xd8d1, 0xa5b4, 0xa2b7, "\000" 
+    IDC_CMBSRC, 0x403, 9, 0
+0xedc8, 0xfebc, 0xa5b4, 0xa2b7, "\000" 
+    IDC_CMBDISCH, 0x403, 9, 0
+0xacc1, 0xf8d0, 0xc9b2, 0xafbc, "\000" 
+    IDC_CMBDISCH, 0x403, 7, 0
+0xf3ba, 0xa5b4, 0xa2b7, "\000" 
+    IDC_CMBDISCH, 0x403, 9, 0
+0xd3d1, 0xb1ca, 0xa5b4, 0xa2b7, "\000" 
+    IDC_CMBGPTC1TYPE, 0x403, 7, 0
+0xc6bc, 0xfdca, 0xf7c6, "\000" 
+    IDC_CMBGPTC1TYPE, 0x403, 11, 0
+0xf6c2, 0xe5b3, 0xa2b7, 0xfac9, 0xf7c6, "\000" 
+    IDC_CMBGPTC2TYPE, 0x403, 7, 0
+0xc6bc, 0xfdca, 0xf7c6, "\000" 
+    IDC_CMBGPTC2TYPE, 0x403, 11, 0
+0xf6c2, 0xe5b3, 0xa2b7, 0xfac9, 0xf7c6, "\000" 
+    IDC_CMBADRG, 0x403, 7, 0
+0x352d, 0x7e56, 0x5635, "\000" 
+    IDC_CMBADRG, 0x403, 9, 0
+0x312d, 0x5630, 0x317e, 0x5630, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "关于 FCAD(&A)..."
+END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\FCAD.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

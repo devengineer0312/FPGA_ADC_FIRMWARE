@@ -1,0 +1,243 @@
+module One_Channel(
+	input clk,
+	input reset,
+	output reg AD_RESET,
+	output AD_RANGE,
+	output AD_OS0,
+	output AD_OS1,
+	output AD_OS2,
+	input AD1_BUSY,
+	input[15:0] AD_DB,
+	output reg AD1_RD,
+	output reg AD1_CONVST,
+	output reg AD1_CS,
+	input AD1_FRSTDATA,
+	output reg [15:0] ad_ch1,
+	output reg [15:0] ad_ch2,
+	output reg [15:0] ad_ch3,
+	output reg [15:0] ad_ch4,
+	output reg [15:0] ad_ch5,
+	output reg [15:0] ad_ch6,
+	output reg [15:0] ad_ch7,
+	output reg [15:0] ad_ch8,
+	output reg ad_done,
+	output reg[3:0] LED
+);
+
+parameter ADC_IDLE_STATE = 4'd0;
+parameter ADC_START_CONV_STATE = 4'd1;
+parameter ADC_READ_START_STATE = 4'd2;
+parameter ADC_READ_STATE = 4'd3;
+
+assign AD_RANGE = 0;
+assign {AD_OS0,AD_OS1,AD_OS2} = 3'b0;
+reg[7:0] count;
+reg[3:0] state;
+reg AD1_RD_dly1;
+
+always @ (posedge clk or negedge reset)
+begin
+	if (!reset) begin
+		state <= ADC_IDLE_STATE;
+		AD_RESET <= 1'b1;
+		count <= 8'h0;
+	end
+	else begin
+	
+		if (AD_DB >= 16'h00FF)
+			LED <= 4'b1100;
+		else
+			LED = 4'b0001;
+		case(state)
+			ADC_IDLE_STATE: begin
+				AD1_CONVST <= 1'b1;
+				AD1_CS <= 1'b1;
+				AD1_RD <= 1'b1;
+				ad_done <= 1'b0;
+				AD_RESET <= 1'b0;
+				// LED <= 4'b0010;
+				
+				if (AD1_BUSY) begin
+					count <= 0;
+				end
+				else begin				
+					if (count == 8'h5) begin
+						count <= 8'h0;
+						state <= ADC_START_CONV_STATE;						
+					end
+					else
+						count <= count + 8'h1;
+				end
+			end
+			ADC_START_CONV_STATE: begin
+				AD1_CONVST <= 1'b0;
+				AD1_CS <= 1'b1;
+				AD1_RD <= 1'b1;
+				AD_RESET <= 1'b0;
+				
+				if (count == 8'h2) begin
+					count <= 8'h0;
+					state <= ADC_READ_START_STATE;
+				end
+				else
+					count <= count + 8'h1;
+			end
+			ADC_READ_START_STATE: begin
+				if (AD1_BUSY == 1'b0) begin
+					AD1_CONVST <= 1'b1;
+					AD1_CS <= 1'b1;
+					AD1_RD <= 1'b1;
+					count <= 0;
+					// LED <= 4'b1010;
+				end
+				else begin				
+					// LED <= 4'b0110;
+					AD1_CS <= 0;
+					AD1_RD <= 0;
+					AD1_RD_dly1 <= 0;
+					
+					if (count == 1) begin
+						count <= 0;
+						state <= ADC_READ_STATE;
+					end
+					else
+						count <= count + 1;
+				end
+			end
+			ADC_READ_STATE: begin			
+				count <= count + 8'h1;
+				// Read channel 1
+				if (count == 8'h1) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch1 <= AD_DB;
+					//LED <= 4'b1000;
+					
+								
+				end
+				else if (count == 8'h2) begin
+					AD1_RD <= 0;
+					AD1_CS <= 0;
+					//LED <= 4'b0000;
+				end
+				// Read channel 2
+				else if (count == 8'h4) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch2 <= AD_DB;
+				end
+				else if (count == 8'h5) begin
+					AD1_RD <= 0;
+					AD1_CS <= 0;
+				end
+				// Read channel 3
+				else if (count == 8'h7) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch3 <= AD_DB;
+				end
+				else if (count == 8'h8) begin
+					AD1_RD <= 0;
+					AD1_CS <= 0;
+				end
+				// Read channel 4
+				else if (count == 8'hA) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch4 <= AD_DB;
+				end
+				else if (count == 8'hB) begin
+					AD1_RD <= 0;
+					AD1_CS <= 0;
+				end
+				// Read channel 5
+				else if (count == 8'hD) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch5 <= AD_DB;
+				end
+				else if (count == 8'hE) begin
+					AD1_RD <= 0;
+					AD1_CS <= 0;
+				end
+				// Read channel 6
+				else if (count == 8'h10) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch6 <= AD_DB;
+				end
+				else if (count == 8'h11) begin
+					AD1_RD <= 0;
+					AD1_CS <= 0;
+				end
+				// Read channel 7
+				else if (count == 8'h13) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch7 <= AD_DB;
+				end
+				else if (count == 8'h14) begin
+					AD1_RD <= 0;
+					AD1_CS <= 0;
+				end
+				// Read channel 8
+				else if (count == 8'h16) begin
+					AD1_RD <= 1;
+					AD1_CS <= 0;
+					ad_ch8 <= AD_DB;
+				end
+				else if (count == 8'h17) begin
+					AD1_RD <= 1;
+					ad_done <= 1;
+					AD1_CS <= 1;
+					state <= ADC_IDLE_STATE;
+					count <= 8'h0;
+				end
+				
+				/*
+				AD1_RD <= 1;
+				AD1_RD_dly1 <= AD1_RD;
+				
+				if (AD1_RD_dly1 && ~AD1_RD) begin
+					count <= count + 1;
+				end
+				else if (~AD1_RD_dly1 && AD1_RD) begin
+					if (count == 1) begin
+						//if (AD1_FRSTDATA) begin
+							ad_ch1 <= AD_DB;
+							if (ad_ch1 > 16'h00FF)
+								LED <= 4'b1100;
+							else
+								LED = 4'b0001;
+							//LED = {AD_DB[15],AD_DB[14],AD_DB[13],AD_DB[12]};
+						//end
+						//else
+						//	LED <= 4'b1001;
+					end
+					else if (count == 2)
+						ad_ch2 <= AD_DB;
+					else if (count == 3)
+						ad_ch3 <= AD_DB;
+					else if (count == 4)
+						ad_ch4 <= AD_DB;
+					else if (count == 5)
+						ad_ch5 <= AD_DB;
+					else if (count == 6)
+						ad_ch6 <= AD_DB;
+					else if (count == 7)
+						ad_ch7 <= AD_DB;
+					else if (count == 8) begin
+						ad_ch8 <= AD_DB;
+						ad_done <= 1;
+						AD1_CS <= 1;
+						state <= ADC_IDLE_STATE;
+						count <= 0;
+					end
+				end
+				*/
+			end
+		endcase
+	end
+end
+
+endmodule

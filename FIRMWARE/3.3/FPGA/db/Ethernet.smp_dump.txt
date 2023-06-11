@@ -1,0 +1,42 @@
+
+State Machine - |MultipleADC|One_Channel:inst6|state
+Name state.ADC_READ_STATE state.ADC_READ_START_STATE state.ADC_START_CONV_STATE state.ADC_IDLE_STATE 
+state.ADC_IDLE_STATE 0 0 0 0 
+state.ADC_START_CONV_STATE 0 0 1 1 
+state.ADC_READ_START_STATE 0 1 0 1 
+state.ADC_READ_STATE 1 0 0 1 
+
+State Machine - |MultipleADC|One_Channel:inst5|state
+Name state.ADC_READ_STATE state.ADC_READ_START_STATE state.ADC_START_CONV_STATE state.ADC_IDLE_STATE 
+state.ADC_IDLE_STATE 0 0 0 0 
+state.ADC_START_CONV_STATE 0 0 1 1 
+state.ADC_READ_START_STATE 0 1 0 1 
+state.ADC_READ_STATE 1 0 0 1 
+
+State Machine - |MultipleADC|One_Channel:inst4|state
+Name state.ADC_READ_STATE state.ADC_READ_START_STATE state.ADC_START_CONV_STATE state.ADC_IDLE_STATE 
+state.ADC_IDLE_STATE 0 0 0 0 
+state.ADC_START_CONV_STATE 0 0 1 1 
+state.ADC_READ_START_STATE 0 1 0 1 
+state.ADC_READ_STATE 1 0 0 1 
+
+State Machine - |MultipleADC|One_Channel:inst3|state
+Name state.ADC_READ_STATE state.ADC_READ_START_STATE state.ADC_START_CONV_STATE state.ADC_IDLE_STATE 
+state.ADC_IDLE_STATE 0 0 0 0 
+state.ADC_START_CONV_STATE 0 0 1 1 
+state.ADC_READ_START_STATE 0 1 0 1 
+state.ADC_READ_STATE 1 0 0 1 
+
+State Machine - |MultipleADC|One_Channel:inst2|state
+Name state.ADC_READ_STATE state.ADC_READ_START_STATE state.ADC_START_CONV_STATE state.ADC_IDLE_STATE 
+state.ADC_IDLE_STATE 0 0 0 0 
+state.ADC_START_CONV_STATE 0 0 1 1 
+state.ADC_READ_START_STATE 0 1 0 1 
+state.ADC_READ_STATE 1 0 0 1 
+
+State Machine - |MultipleADC|One_Channel:inst1|state
+Name state.ADC_READ_STATE state.ADC_READ_START_STATE state.ADC_START_CONV_STATE state.ADC_IDLE_STATE 
+state.ADC_IDLE_STATE 0 0 0 0 
+state.ADC_START_CONV_STATE 0 0 1 1 
+state.ADC_READ_START_STATE 0 1 0 1 
+state.ADC_READ_STATE 1 0 0 1 

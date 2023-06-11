@@ -1,0 +1,619 @@
+Analysis & Synthesis report for adc_dac_interface
+Tue Jul 21 17:52:31 2020
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_6|next_state
+  9. State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_5|next_state
+ 10. State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_4|next_state
+ 11. State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_3|next_state
+ 12. State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_2|next_state
+ 13. State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_1|next_state
+ 14. State Machine - |adc_dac_interface|ads8330_interface:I_ads8330_interface|next_state
+ 15. Registers Removed During Synthesis
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_6"
+ 20. Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_5"
+ 21. Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_4"
+ 22. Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_3"
+ 23. Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_2"
+ 24. Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_1"
+ 25. Port Connectivity Checks: "ads8330_interface:I_ads8330_interface"
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jul 21 17:52:31 2020       ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name                      ; adc_dac_interface                           ;
+; Top-level Entity Name              ; adc_dac_interface                           ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 295                                         ;
+;     Total combinational functions  ; 289                                         ;
+;     Dedicated logic registers      ; 204                                         ;
+; Total registers                    ; 204                                         ;
+; Total pins                         ; 24                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE30F23C8       ;                    ;
+; Top-level entity name                                                      ; adc_dac_interface  ; adc_dac_interface  ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; power_on_reset.vhd               ; yes             ; User VHDL File  ; E:/2020 PROJECTS/5. FPGA ADC Circuit(CH)/FIRMWARE/Itn4_DAC_by_6/Itn4_DAC_by_6/power_on_reset.vhd    ;         ;
+; ads8330_interface.vhd            ; yes             ; User VHDL File  ; E:/2020 PROJECTS/5. FPGA ADC Circuit(CH)/FIRMWARE/Itn4_DAC_by_6/Itn4_DAC_by_6/ads8330_interface.vhd ;         ;
+; adc_dac_interface.vhd            ; yes             ; User VHDL File  ; E:/2020 PROJECTS/5. FPGA ADC Circuit(CH)/FIRMWARE/Itn4_DAC_by_6/Itn4_DAC_by_6/adc_dac_interface.vhd ;         ;
+; ad5441_interface.vhd             ; yes             ; User VHDL File  ; E:/2020 PROJECTS/5. FPGA ADC Circuit(CH)/FIRMWARE/Itn4_DAC_by_6/Itn4_DAC_by_6/ad5441_interface.vhd  ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 295         ;
+;                                             ;             ;
+; Total combinational functions               ; 289         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 153         ;
+;     -- 3 input functions                    ; 38          ;
+;     -- <=2 input functions                  ; 98          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 233         ;
+;     -- arithmetic mode                      ; 56          ;
+;                                             ;             ;
+; Total registers                             ; 204         ;
+;     -- Dedicated logic registers            ; 204         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 24          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; CLKY2~input ;
+; Maximum fan-out                             ; 204         ;
+; Total fan-out                               ; 1545        ;
+; Average fan-out                             ; 2.86        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Library Name ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+; |adc_dac_interface                         ; 289 (62)          ; 204 (61)     ; 0           ; 0            ; 0       ; 0         ; 24   ; 0            ; |adc_dac_interface                                       ; work         ;
+;    |ad5441_interface:I_ad5441_interface_1| ; 58 (58)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_1 ; work         ;
+;    |ad5441_interface:I_ad5441_interface_2| ; 59 (59)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_2 ; work         ;
+;    |ad5441_interface:I_ad5441_interface_4| ; 22 (22)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_4 ; work         ;
+;    |ads8330_interface:I_ads8330_interface| ; 67 (67)           ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_dac_interface|ads8330_interface:I_ads8330_interface ; work         ;
+;    |power_on_reset:I_power_on_reset|       ; 21 (21)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |adc_dac_interface|power_on_reset:I_power_on_reset       ; work         ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_6|next_state         ;
++--------------------------+---------------------+--------------------------+-----------------+
+; Name                     ; next_state.issue_ld ; next_state.data_transfer ; next_state.idle ;
++--------------------------+---------------------+--------------------------+-----------------+
+; next_state.idle          ; 0                   ; 0                        ; 0               ;
+; next_state.data_transfer ; 0                   ; 1                        ; 1               ;
+; next_state.issue_ld      ; 1                   ; 0                        ; 1               ;
++--------------------------+---------------------+--------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_5|next_state         ;
++--------------------------+---------------------+--------------------------+-----------------+
+; Name                     ; next_state.issue_ld ; next_state.data_transfer ; next_state.idle ;
++--------------------------+---------------------+--------------------------+-----------------+
+; next_state.idle          ; 0                   ; 0                        ; 0               ;
+; next_state.data_transfer ; 0                   ; 1                        ; 1               ;
+; next_state.issue_ld      ; 1                   ; 0                        ; 1               ;
++--------------------------+---------------------+--------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_4|next_state         ;
++--------------------------+---------------------+--------------------------+-----------------+
+; Name                     ; next_state.issue_ld ; next_state.data_transfer ; next_state.idle ;
++--------------------------+---------------------+--------------------------+-----------------+
+; next_state.idle          ; 0                   ; 0                        ; 0               ;
+; next_state.data_transfer ; 0                   ; 1                        ; 1               ;
+; next_state.issue_ld      ; 1                   ; 0                        ; 1               ;
++--------------------------+---------------------+--------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_3|next_state         ;
++--------------------------+---------------------+--------------------------+-----------------+
+; Name                     ; next_state.issue_ld ; next_state.data_transfer ; next_state.idle ;
++--------------------------+---------------------+--------------------------+-----------------+
+; next_state.idle          ; 0                   ; 0                        ; 0               ;
+; next_state.data_transfer ; 0                   ; 1                        ; 1               ;
+; next_state.issue_ld      ; 1                   ; 0                        ; 1               ;
++--------------------------+---------------------+--------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_2|next_state         ;
++--------------------------+---------------------+--------------------------+-----------------+
+; Name                     ; next_state.issue_ld ; next_state.data_transfer ; next_state.idle ;
++--------------------------+---------------------+--------------------------+-----------------+
+; next_state.idle          ; 0                   ; 0                        ; 0               ;
+; next_state.data_transfer ; 0                   ; 1                        ; 1               ;
+; next_state.issue_ld      ; 1                   ; 0                        ; 1               ;
++--------------------------+---------------------+--------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |adc_dac_interface|ad5441_interface:I_ad5441_interface_1|next_state         ;
++--------------------------+---------------------+--------------------------+-----------------+
+; Name                     ; next_state.issue_ld ; next_state.data_transfer ; next_state.idle ;
++--------------------------+---------------------+--------------------------+-----------------+
+; next_state.idle          ; 0                   ; 0                        ; 0               ;
+; next_state.data_transfer ; 0                   ; 1                        ; 1               ;
+; next_state.issue_ld      ; 1                   ; 0                        ; 1               ;
++--------------------------+---------------------+--------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |adc_dac_interface|ads8330_interface:I_ads8330_interface|next_state                                                           ;
++--------------------------+-----------------------+--------------------------+---------------------+-------------------------+-----------------+
+; Name                     ; next_state.wait_state ; next_state.data_transfer ; next_state.issue_cs ; next_state.issue_convst ; next_state.idle ;
++--------------------------+-----------------------+--------------------------+---------------------+-------------------------+-----------------+
+; next_state.idle          ; 0                     ; 0                        ; 0                   ; 0                       ; 0               ;
+; next_state.issue_convst  ; 0                     ; 0                        ; 0                   ; 1                       ; 1               ;
+; next_state.issue_cs      ; 0                     ; 0                        ; 1                   ; 0                       ; 1               ;
+; next_state.data_transfer ; 0                     ; 1                        ; 0                   ; 0                       ; 1               ;
+; next_state.wait_state    ; 1                     ; 0                        ; 0                   ; 0                       ; 1               ;
++--------------------------+-----------------------+--------------------------+---------------------+-------------------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                          ;
++----------------------------------------------------------------+----------------------------------------------------------------------------+
+; Register name                                                  ; Reason for Removal                                                         ;
++----------------------------------------------------------------+----------------------------------------------------------------------------+
+; dac_data_val_ch0                                               ; Merged with dac_data_val_ch1                                               ;
+; ad5441_interface:I_ad5441_interface_3|dac_ld_n_t               ; Merged with ad5441_interface:I_ad5441_interface_2|dac_ld_n_t               ;
+; ad5441_interface:I_ad5441_interface_4|dac_ld_n_t               ; Merged with ad5441_interface:I_ad5441_interface_2|dac_ld_n_t               ;
+; ad5441_interface:I_ad5441_interface_5|dac_ld_n_t               ; Merged with ad5441_interface:I_ad5441_interface_2|dac_ld_n_t               ;
+; ad5441_interface:I_ad5441_interface_6|dac_ld_n_t               ; Merged with ad5441_interface:I_ad5441_interface_2|dac_ld_n_t               ;
+; ad5441_interface:I_ad5441_interface_3|dac_sri_t                ; Merged with ad5441_interface:I_ad5441_interface_2|dac_sri_t                ;
+; ad5441_interface:I_ad5441_interface_5|dac_sri_t                ; Merged with ad5441_interface:I_ad5441_interface_4|dac_sri_t                ;
+; ad5441_interface:I_ad5441_interface_6|dac_sri_t                ; Merged with ad5441_interface:I_ad5441_interface_4|dac_sri_t                ;
+; ad5441_interface:I_ad5441_interface_3|count_1[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[0]               ;
+; ad5441_interface:I_ad5441_interface_4|count_1[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[0]               ;
+; ad5441_interface:I_ad5441_interface_5|count_1[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[0]               ;
+; ad5441_interface:I_ad5441_interface_6|count_1[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[0]               ;
+; ad5441_interface:I_ad5441_interface_3|count_1[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[1]               ;
+; ad5441_interface:I_ad5441_interface_4|count_1[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[1]               ;
+; ad5441_interface:I_ad5441_interface_5|count_1[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[1]               ;
+; ad5441_interface:I_ad5441_interface_6|count_1[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[1]               ;
+; ad5441_interface:I_ad5441_interface_3|count_1[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[2]               ;
+; ad5441_interface:I_ad5441_interface_4|count_1[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[2]               ;
+; ad5441_interface:I_ad5441_interface_5|count_1[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[2]               ;
+; ad5441_interface:I_ad5441_interface_6|count_1[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[2]               ;
+; ad5441_interface:I_ad5441_interface_3|count_1[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[3]               ;
+; ad5441_interface:I_ad5441_interface_4|count_1[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[3]               ;
+; ad5441_interface:I_ad5441_interface_5|count_1[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[3]               ;
+; ad5441_interface:I_ad5441_interface_6|count_1[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[3]               ;
+; ad5441_interface:I_ad5441_interface_3|count_1[4]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[4]               ;
+; ad5441_interface:I_ad5441_interface_4|count_1[4]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[4]               ;
+; ad5441_interface:I_ad5441_interface_5|count_1[4]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[4]               ;
+; ad5441_interface:I_ad5441_interface_6|count_1[4]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[4]               ;
+; ad5441_interface:I_ad5441_interface_3|count_1[5]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[5]               ;
+; ad5441_interface:I_ad5441_interface_4|count_1[5]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[5]               ;
+; ad5441_interface:I_ad5441_interface_5|count_1[5]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[5]               ;
+; ad5441_interface:I_ad5441_interface_6|count_1[5]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[5]               ;
+; ad5441_interface:I_ad5441_interface_3|count_1[6]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[6]               ;
+; ad5441_interface:I_ad5441_interface_4|count_1[6]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[6]               ;
+; ad5441_interface:I_ad5441_interface_5|count_1[6]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[6]               ;
+; ad5441_interface:I_ad5441_interface_6|count_1[6]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_1[6]               ;
+; ad5441_interface:I_ad5441_interface_3|next_state.issue_ld      ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.issue_ld      ;
+; ad5441_interface:I_ad5441_interface_4|next_state.issue_ld      ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.issue_ld      ;
+; ad5441_interface:I_ad5441_interface_5|next_state.issue_ld      ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.issue_ld      ;
+; ad5441_interface:I_ad5441_interface_6|next_state.issue_ld      ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.issue_ld      ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[12]           ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[12]           ;
+; ad5441_interface:I_ad5441_interface_3|count_2[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[3]               ;
+; ad5441_interface:I_ad5441_interface_4|count_2[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[3]               ;
+; ad5441_interface:I_ad5441_interface_5|count_2[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[3]               ;
+; ad5441_interface:I_ad5441_interface_6|count_2[3]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[3]               ;
+; ad5441_interface:I_ad5441_interface_3|count_2[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[2]               ;
+; ad5441_interface:I_ad5441_interface_4|count_2[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[2]               ;
+; ad5441_interface:I_ad5441_interface_5|count_2[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[2]               ;
+; ad5441_interface:I_ad5441_interface_6|count_2[2]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[2]               ;
+; ad5441_interface:I_ad5441_interface_3|count_2[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[1]               ;
+; ad5441_interface:I_ad5441_interface_4|count_2[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[1]               ;
+; ad5441_interface:I_ad5441_interface_5|count_2[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[1]               ;
+; ad5441_interface:I_ad5441_interface_6|count_2[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[1]               ;
+; ad5441_interface:I_ad5441_interface_3|count_2[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[0]               ;
+; ad5441_interface:I_ad5441_interface_4|count_2[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[0]               ;
+; ad5441_interface:I_ad5441_interface_5|count_2[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[0]               ;
+; ad5441_interface:I_ad5441_interface_6|count_2[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_2[0]               ;
+; ad5441_interface:I_ad5441_interface_3|count_3[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[1]               ;
+; ad5441_interface:I_ad5441_interface_4|count_3[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[1]               ;
+; ad5441_interface:I_ad5441_interface_5|count_3[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[1]               ;
+; ad5441_interface:I_ad5441_interface_6|count_3[1]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[1]               ;
+; ad5441_interface:I_ad5441_interface_3|count_3[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[0]               ;
+; ad5441_interface:I_ad5441_interface_4|count_3[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[0]               ;
+; ad5441_interface:I_ad5441_interface_5|count_3[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[0]               ;
+; ad5441_interface:I_ad5441_interface_6|count_3[0]               ; Merged with ad5441_interface:I_ad5441_interface_2|count_3[0]               ;
+; ad5441_interface:I_ad5441_interface_3|dac_clk_t                ; Merged with ad5441_interface:I_ad5441_interface_2|dac_clk_t                ;
+; ad5441_interface:I_ad5441_interface_4|dac_clk_t                ; Merged with ad5441_interface:I_ad5441_interface_2|dac_clk_t                ;
+; ad5441_interface:I_ad5441_interface_5|dac_clk_t                ; Merged with ad5441_interface:I_ad5441_interface_2|dac_clk_t                ;
+; ad5441_interface:I_ad5441_interface_6|dac_clk_t                ; Merged with ad5441_interface:I_ad5441_interface_2|dac_clk_t                ;
+; ad5441_interface:I_ad5441_interface_3|next_state.data_transfer ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.data_transfer ;
+; ad5441_interface:I_ad5441_interface_4|next_state.data_transfer ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.data_transfer ;
+; ad5441_interface:I_ad5441_interface_5|next_state.data_transfer ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.data_transfer ;
+; ad5441_interface:I_ad5441_interface_6|next_state.data_transfer ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.data_transfer ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[12]           ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[12]           ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[12]           ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[12]           ;
+; ad5441_interface:I_ad5441_interface_3|next_state.idle          ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.idle          ;
+; ad5441_interface:I_ad5441_interface_4|next_state.idle          ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.idle          ;
+; ad5441_interface:I_ad5441_interface_5|next_state.idle          ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.idle          ;
+; ad5441_interface:I_ad5441_interface_6|next_state.idle          ; Merged with ad5441_interface:I_ad5441_interface_2|next_state.idle          ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[1]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[1]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[1]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[1]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[1]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[1]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[2]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[2]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[2]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[2]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[2]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[2]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[3]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[3]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[3]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[3]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[3]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[3]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[4]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[4]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[4]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[4]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[4]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[4]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[5]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[5]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[5]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[5]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[5]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[5]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[6]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[6]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[6]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[6]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[6]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[6]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[7]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[7]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[7]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[7]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[7]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[7]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[8]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[8]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[8]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[8]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[8]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[8]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[9]            ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[9]            ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[9]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[9]            ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[9]            ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[9]            ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[10]           ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[10]           ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[10]           ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[10]           ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[10]           ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[10]           ;
+; ad5441_interface:I_ad5441_interface_3|dac_data_t[11]           ; Merged with ad5441_interface:I_ad5441_interface_2|dac_data_t[11]           ;
+; ad5441_interface:I_ad5441_interface_5|dac_data_t[11]           ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[11]           ;
+; ad5441_interface:I_ad5441_interface_6|dac_data_t[11]           ; Merged with ad5441_interface:I_ad5441_interface_4|dac_data_t[11]           ;
+; Total Number of Removed Registers = 112                        ;                                                                            ;
++----------------------------------------------------------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 204   ;
+; Number of registers using Synchronous Clear  ; 103   ;
+; Number of registers using Synchronous Load   ; 14    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 59    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; power_on_reset:I_power_on_reset|reset_t ; 29      ;
+; sw_0_deb                                ; 31      ;
+; sw_0_shift[1]                           ; 2       ;
+; sw_0_shift[2]                           ; 2       ;
+; sw_0_shift[0]                           ; 2       ;
+; sw_0_shift[3]                           ; 2       ;
+; sw_0_shift[4]                           ; 1       ;
+; Total number of inverted registers = 7  ;         ;
++-----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |adc_dac_interface|dac_data_ch0[0]                                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_1|count_2[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_2|count_2[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_3|count_2[1] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_4|count_2[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_5|count_2[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_6|count_2[2] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |adc_dac_interface|ads8330_interface:I_ads8330_interface|count_2[0] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_1|count_3[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_2|count_3[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_3|count_3[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_4|count_3[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_5|count_3[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_6|count_3[1] ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |adc_dac_interface|dac_data_ch1[6]                                  ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |adc_dac_interface|ads8330_interface:I_ads8330_interface|count_1[1] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_6|count_1    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_5|count_1    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_4|count_1    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_3|count_1    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_2|count_1    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |adc_dac_interface|ad5441_interface:I_ad5441_interface_1|count_1    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_6"                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dac_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_5"                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dac_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_4"                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dac_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_3"                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dac_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_2"                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; dac_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "ad5441_interface:I_ad5441_interface_1" ;
++----------+-------+----------+-------------------------------------+
+; Port     ; Type  ; Severity ; Details                             ;
++----------+-------+----------+-------------------------------------+
+; data_val ; Input ; Info     ; Stuck at VCC                        ;
++----------+-------+----------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ads8330_interface:I_ads8330_interface"                                                        ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; adc_data[4..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Tue Jul 21 17:52:28 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off adc_dac_interface -c adc_dac_interface
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file power_on_reset.vhd
+    Info (12022): Found design unit 1: power_on_reset-Behavioral
+    Info (12023): Found entity 1: power_on_reset
+Info (12021): Found 2 design units, including 1 entities, in source file ads8330_interface.vhd
+    Info (12022): Found design unit 1: ads8330_interface-Behavioral
+    Info (12023): Found entity 1: ads8330_interface
+Info (12021): Found 2 design units, including 1 entities, in source file adc_dac_interface.vhd
+    Info (12022): Found design unit 1: adc_dac_interface-Behavioral
+    Info (12023): Found entity 1: adc_dac_interface
+Info (12021): Found 2 design units, including 1 entities, in source file ad5441_interface.vhd
+    Info (12022): Found design unit 1: ad5441_interface-Behavioral
+    Info (12023): Found entity 1: ad5441_interface
+Info (12127): Elaborating entity "adc_dac_interface" for the top level hierarchy
+Info (12128): Elaborating entity "power_on_reset" for hierarchy "power_on_reset:I_power_on_reset"
+Info (12128): Elaborating entity "ads8330_interface" for hierarchy "ads8330_interface:I_ads8330_interface"
+Info (12128): Elaborating entity "ad5441_interface" for hierarchy "ad5441_interface:I_ad5441_interface_1"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[3]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 320 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 296 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4657 megabytes
+    Info: Processing ended: Tue Jul 21 17:52:31 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

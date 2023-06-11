@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jul 21 17:52:31 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : adc_dac_interface
+Top-level Entity Name : adc_dac_interface
+Family : Cyclone IV E
+Total logic elements : 295
+    Total combinational functions : 289
+    Dedicated logic registers : 204
+Total registers : 204
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
